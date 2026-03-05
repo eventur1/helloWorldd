@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+
+    <!-- Link external CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Main heading -->
+    <h1>About Me</h1>
+
+    <!-- Background section -->
+    <h2 class="section-title">Background</h2>
+    <p>
+        My name is Ester Ventura. I am studying Accounting and Information Systems.
+        I am interested in <strong>business</strong> and <strong>technology</strong>.
+    </p>
+
+    <p>
+        I enjoy learning new skills and staying <em>organized</em>.
+        I believe in <em>continuous growth</em> and <strong>hard work</strong>.
+    </p>
+
+    <!-- Required: third paragraph with id -->
+    <p id="third-paragraph">
+        I am working on improving my skills in school and learning how to use programming for business.
+    </p>
+
+    <!-- Interests section -->
+    <h2 class="section-title">My Interests</h2>
+
+    <h3>Hobbies</h3>
+    <ul>
+        <li>Reading</li>
+        <li>Learning new technologies</li>
+        <li>Spending time with family</li>
+    </ul>
+
+    <h3>Goals</h3>
+    <ol>
+        <li>Graduate with my degree</li>
+        <li>Earn my CPA license</li>
+        <li>Build a strong career</li>
+    </ol>
+
+    <!-- Courses table -->
+    <h2 class="section-title">Courses Taken</h2>
+    <table>
+        <tr>
+            <th>Course</th>
+            <th>Semester</th>
+        </tr>
+        <tr>
+            <td>BMGT301</td>
+            <td>Fall 2024</td>
+        </tr>
+        <tr>
+            <td>ACCT201</td>
+            <td>Spring 2025</td>
+        </tr>
+        <tr>
+            <td>BMGT407</td>
+            <td>Spring 2026</td>
+        </tr>
+    </table>
+
+    <!-- Relative link -->
+    <p>
+        Go back to the <a href="/hello">Hello Page</a>.
+    </p>
+
+    <!-- External links -->
+    <p>Favorite Websites:</p>
+    <ul>
+        <li><a href="https://www.rhsmith.umd.edu/">Smith School</a></li>
+        <li><a href="https://www.python.org/" target="_blank">Python (opens new tab)</a></li>
+    </ul>
+
+    <!-- Smith logo (removed width/height and used CSS class) -->
+    <img src="https://terpconnect.umd.edu/~jbono/bmgt407/images/smith-logo.png"
+         alt="Robert H. Smith School of Business Logo"
+         class="logo">
+
+    <!-- End of page -->
+
+</body>
+</html>
