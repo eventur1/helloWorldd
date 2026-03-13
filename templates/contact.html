@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if submitted %}
+        <div class="alert alert-success">
+            <h3>Thank You, {{ first }}!</h3>
+            <p>Regurgitated Data: {{ first }} {{ last }} | {{ email }} | {{ major }}</p>
+        </div>
+    {% else %}
+        <h2>Contact Form</h2>
+        <form method="POST">
+            <input type="text" name="first_name" class="form-control mb-3" placeholder="First Name" required>
+            <input type="text" name="last_name" class="form-control mb-3" placeholder="Last Name" required>
+            <input type="email" name="email" class="form-control mb-3" placeholder="Email Address" required>
+            <input type="text" name="major" class="form-control mb-3" placeholder="Major" required>
+            <button type="submit" class="btn btn-primary">Submit Form</button>
+        </form>
+    {% endif %}
+{% endblock %}
