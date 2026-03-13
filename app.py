@@ -1,21 +1,25 @@
-from flask import Flask, render_template
-import os
+from flask import Flask, render_template, request
 
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__)
 
-@app.route('/hello')
-def hello():
-    return "Hello, world!"
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+@app.route('/favorite-course')
+def favorite_course():
+    # Grabs ?subject=BMGT&course_number=407 from the URL
+    subject = request.args.get('subject', 'BMGT')
+    course_num = request.args.get('course_number', '407')
+    return render_template('favorite-course.html', subject=subject, course_num=course_num)
 
-@app.route('/about-css')
-def about_css():
-    return render_template('about-css.html')
 
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        # This part runs AFTER you hit submit
+        first = request.form.get('first_name')
+        last = request.form.get('last_name')
+        email = request.form.get('email')
+        major = request.form.get('major')
+        return render_template('contact.html', submitted=True, first=first, last=last, email=email, major=major)
+
+    # This part runs when you first visit the page
+    return render_template('contact.html', submitted=False)
