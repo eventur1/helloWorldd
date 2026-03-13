@@ -1,44 +1,12 @@
-/* Comment 1: Overall page styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    background-color: #f8f9fa;
 }
 
-/* Comment 2: Style all paragraphs with at least two rules */
-p {
-    font-size: 16px;
-    line-height: 1.6;
+.card {
+    border: none;
+    border-radius: 12px;
 }
 
-/* Comment 3: Style all level two headers with at least two rules */
-h2 {
-    margin-top: 24px;
-    text-transform: uppercase;
-}
-
-/* Table border with a border color */
-table, th, td {
-    border: 2px solid #990000;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 8px;
-}
-
-/* ID selector for the third paragraph with at least two rules */
-#third-paragraph {
+.navbar-brand {
     font-weight: bold;
-    background-color: #f2f2f2;
-}
-
-/* Class-based rule block (apply to your h2 tags) */
-.section-title {
-    color: #990000;
-}
-
-/* img.logo is the X.Y selector for the logo class on img tags only */
-img.logo {
-    width: 300px;
-    height: 80px;
 }
