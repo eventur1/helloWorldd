@@ -1,18 +1,45 @@
 {% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
 {% block content %}
+    <h1 class="mb-4">Contact Form</h1>
+
     {% if submitted %}
-        <div class="alert alert-success">
-            <h3>Thank You, {{ first }}!</h3>
-            <p>Regurgitated Data: {{ first }} {{ last }} | {{ email }} | {{ major }}</p>
+        <div class="alert alert-success" role="alert">
+            Thank you for submitting the form.
         </div>
+
+        <h2 class="h4 mt-4">You entered:</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>First Name:</strong> {{ first_name }}</li>
+            <li class="list-group-item"><strong>Last Name:</strong> {{ last_name }}</li>
+            <li class="list-group-item"><strong>Email Address:</strong> {{ email }}</li>
+            <li class="list-group-item"><strong>Favorite Color:</strong> {{ favorite_color }}</li>
+        </ul>
     {% else %}
-        <h2>Contact Form</h2>
-        <form method="POST">
-            <input type="text" name="first_name" class="form-control mb-3" placeholder="First Name" required>
-            <input type="text" name="last_name" class="form-control mb-3" placeholder="Last Name" required>
-            <input type="email" name="email" class="form-control mb-3" placeholder="Email Address" required>
-            <input type="text" name="major" class="form-control mb-3" placeholder="Major" required>
-            <button type="submit" class="btn btn-primary">Submit Form</button>
+        <form method="POST" action="/contact">
+            <div class="mb-3">
+                <label for="first_name" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="first_name" name="first_name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="last_name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="favorite_color" class="form-label">Favorite Color</label>
+                <input type="text" class="form-control" id="favorite_color" name="favorite_color" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     {% endif %}
 {% endblock %}
