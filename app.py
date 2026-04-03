@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from werkzeug.security import check_password_hash
 from authorize import role_required
-from models import *
+from models import db, Student, Major, User
 from datetime import datetime as dt
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -215,8 +215,8 @@ def error():
 
 
 @app.errorhandler(404)
-def page_not_found():
-    flash(f'Sorry! You are trying to access a page that does not exist. Please contact support if this problem persists.', 'error')
+def page_not_found(e):
+    flash('Sorry! You are trying to access a page that does not exist. Please contact support if this problem persists.', 'error')
     return render_template('404.html'), 404
 
 @app.route('/training')
